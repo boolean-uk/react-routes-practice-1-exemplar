@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Route, Routes, Link } from "react-router-dom";
+import AppsPage from "./pages/Apps";
 import Home from "./pages/Home";
 import ProductsPage from "./pages/Products";
 import "./styles.css";
@@ -80,10 +81,17 @@ export default function App() {
             <li>
               <Link to="/products">Products</Link>
             </li>
+            <li>
+              <Link to="/apps">Apps</Link>
+            </li>
           </ul>
         </nav>
       </header>
       <Routes>
+        <Route
+          path="/apps"
+          element={<AppsPage apps={apps} />}
+        />
         <Route
           path="/products"
           element={<ProductsPage products={products} />}
